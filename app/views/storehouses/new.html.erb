@@ -1,0 +1,11 @@
+<%= form_with  model: @storehouse do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, id: :storehouse_name %>
+  </p><br>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
