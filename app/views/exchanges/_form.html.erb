@@ -1,0 +1,13 @@
+<%= form_with model: @exchange, url: exchanges_path, local: false, class: 'hidden products-form' do |f| %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Sourse Storehouse Amount</th>
+      <th>Amount to exchange</th>
+      <th>Target Storehouse Amount</th>
+    </tr>
+    <%= render @exchange %>
+  </table>
+
+
+<% end %>
