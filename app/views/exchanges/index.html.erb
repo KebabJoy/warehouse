@@ -1,0 +1,16 @@
+<h1>Exchange History</h1>
+<%= link_to 'Main Page', '/' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Source Storehouse</th>
+      <th>Target Storehouse</th>
+      <th>Amount Exchanged</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @exchanges %>
+  </tbody>
+</table>

@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   resources :storehouses, only: %i[index new create] do
     resources :products, only: %i[index new create destroy]
   end
+
+  resources :exchanges, only: %i[index new create] do
+    collection do
+      post :prepare_products
+    end
+  end
 end
