@@ -13,7 +13,7 @@ class StorehousesController < ApplicationController
     @storehouse = Storehouse.new(permitted_params)
 
     if @storehouse.save
-      render :index
+      redirect_to storehouses_path
     else
       head :unprocessable_entity
     end
