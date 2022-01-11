@@ -1,0 +1,34 @@
+<%= form_with model: @exchange, url: url_for(controller: 'exchanges', action: :create), local: false do |f| %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Sourse Storehouse Amount</th>
+        <th>Amount to exchange</th>
+        <th>Target Storehouse Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exchange.first.products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td>
+            <%= product.amount %>
+            <%= f.hidden_field :source_storehouse_id, value: @exchange.first.id %>
+          </td>
+          <td>
+            <%= fields_for "products[]", product do |am| %>
+              <%= am.number_field :amount %>
+            <% end %>
+          </td>
+          <td>
+            <%= @exchange.last.products.find_by(name: product.amount)&.amount || 0 %>
+            <%= f.hidden_field :target_storehouse_id, value: @exchange.last.id %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= f.submit 'Exchange' %>
+<% end %>
