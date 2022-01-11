@@ -13,6 +13,7 @@ gem 'rails', '~> 6.0.4', '>= 6.0.4.4'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -32,6 +33,7 @@ group :rubocop do
 end
 
 group :test do
+  gem 'pry'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
