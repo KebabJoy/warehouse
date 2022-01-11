@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   private
 
   def find_storehouse
-    @storehouse = Storehouse.find_by(params[:storehouse_id])
+    @storehouse = Storehouse.find_by(id: params[:storehouse_id])
   end
 
   def permitted_params
