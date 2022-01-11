@@ -1,2 +1,6 @@
-<%= product.name %>
+<div id="product-<%= product.id %>">
+  <%= product.name %><%= button_to 'Delete',
+                               storehouse_product_path(@storehouse, product),
+                               method: :delete, remote: true %>
+</div>
 <br>

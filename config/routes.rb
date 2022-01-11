@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root to: 'storehouses#index'
 
   resources :storehouses, only: %i[index new create] do
-    resources :products, only: %i[index new create]
+    resources :products, only: %i[index new create destroy]
   end
 end
