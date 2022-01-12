@@ -1,0 +1,24 @@
+<h1><%= link_to 'Exchange History', exchanges_path %></h1>
+<h1>Select storehouses to exchange products</h1>
+<%= form_with model: @exchange, url: prepare_products_exchanges_path, local: false do |f| %>
+  <div class="exchange-errors red hidden">
+    <p>You must select different storehouses before continuing</p>
+  </div>
+
+  <div class="storehouses-form">
+    <p>
+      <%= f.label :source_storehouse_id %>
+      <%= f.collection_select :source_storehouse_id, Storehouse.all, :id, :name, prompt: true %>
+    </p>
+
+    <p>
+      <%= f.label :target_storehouse_id %>
+      <%= f.collection_select :target_storehouse_id, Storehouse.all, :id, :name, prompt: true %>
+    </p>
+
+    <%= f.submit 'Select products'%>
+  </div>
+
+<% end %>
+
+

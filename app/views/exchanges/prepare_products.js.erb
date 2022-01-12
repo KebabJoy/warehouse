@@ -1,0 +1,3 @@
+$(".storehouses-form").remove()
+$(".products-form").show()
+document.querySelector('.products-form').innerHTML = '<div><%= j render 'exchanges/form', model: @exchange %></div>'
