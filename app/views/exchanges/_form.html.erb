@@ -22,7 +22,7 @@
             <% end %>
           </td>
           <td>
-            <%= @exchange.last.products.find_by(name: product.amount)&.amount || 0 %>
+            <%= @exchange.last.products.find_by(name: product.name)&.amount || 0 %>
             <%= f.hidden_field :target_storehouse_id, value: @exchange.last.id %>
           </td>
         </tr>
