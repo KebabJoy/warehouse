@@ -7,4 +7,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Storehouse.create(name: 'test storehouse')
+3.times do |i|
+  sh = Storehouse.create(name: "test storehouse #{i + 1}")
+  3.times do |j|
+    sh.products.create(name: "Test product #{i + j + 1}", amount: i + j + 1)
+  end
+end
